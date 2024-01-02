@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boulders",
+  "info": {
+    "singularName": "boulder",
+    "pluralName": "boulders",
+    "displayName": "Boulder",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "grade": {
+      "type": "string",
+      "default": "5+",
+      "maxLength": 4,
+      "minLength": 1
+    },
+    "area": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::area.area",
+      "inversedBy": "boulders"
+    },
+    "ascents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ascent.ascent",
+      "mappedBy": "boulder"
+    }
+  }
+}

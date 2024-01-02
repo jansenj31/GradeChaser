@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ascents",
+  "info": {
+    "singularName": "ascent",
+    "pluralName": "ascents",
+    "displayName": "Ascent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "boulder": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::boulder.boulder",
+      "inversedBy": "ascents"
+    },
+    "app_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::app-user.app-user",
+      "inversedBy": "ascents"
+    }
+  }
+}
